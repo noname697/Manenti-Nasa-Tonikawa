@@ -1,4 +1,4 @@
-const Background = () => {
+export const Background = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#243b74_0%,#171e30_40%,#0b1021_100%)]" />
@@ -7,5 +7,3 @@ const Background = () => {
     </div>
   );
 };
-
-export default Background;

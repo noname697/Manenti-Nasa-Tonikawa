@@ -1,7 +1,6 @@
-const APODCard = () => {
+export const APODCard = () => {
   return (
     <></>
   );
 };
 
-export default APODCard;

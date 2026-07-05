@@ -1,7 +1,5 @@
-const DataPicker = () => {
+export const DataPicker = () => {
   return (
     <></>
   );
 };
-
-export default DataPicker;

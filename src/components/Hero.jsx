@@ -1,7 +1,6 @@
-const Hero = () => {
+export const Hero = () => {
   return (
     <></>
   );
 };
 
-export default Hero;
