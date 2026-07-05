@@ -6,7 +6,7 @@ const Button = ({ children, variant = "primary", ...props }) => {
 
   return (
     <button
-      className={`rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ${variants[variant]}`}
+      className={`cursor-pointer rounded-full px-6 py-3 text-base font-medium transition-all duration-300 inline-flex items-center justify-center gap-2 ${variants[variant]}`}
       {...props}
     >
       {children}
