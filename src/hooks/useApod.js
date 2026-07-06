@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getTodayPicture } from "../services/nasaApi";
+import { getPictureByDate, getTodayPicture } from "../services/nasaApi";
 
-export const useApod = () => {
+export const useApod = (selectedDate) => {
   const [picture, setPicture] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -9,7 +9,11 @@ export const useApod = () => {
   useEffect(() => {
     const loadPicture = async () => {
       try {
-        const data = await getTodayPicture();
+        setLoading(true);
+
+        const data = selectedDate
+          ? await getPictureByDate(selectedDate)
+          : await getTodayPicture();
         setPicture(data);
       } catch (error) {
         setError(error.message);
@@ -19,7 +23,7 @@ export const useApod = () => {
     };
 
     loadPicture();
-  }, []);
+  }, [selectedDate]);
 
   return { picture, loading, error };
 };
