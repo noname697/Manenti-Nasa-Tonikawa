@@ -12,6 +12,21 @@ export const APODCard = ({ picture, onOpenDatePicker }) => {
 
   const isImage = picture.media_type === "image";
 
+  const downloadImage = () => {
+    if (!picture.hdurl && !picture.url) return;
+
+    const link = document.createElement("a");
+
+    link.href = picture.hdurl ?? picture.url;
+    link.download = `NASA-${picture.date}-${picture.title.replace(/[^\w\s-]/g, "").replace(/\s+/g, "-")}.jpg`;
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <motion.section
@@ -54,9 +69,11 @@ export const APODCard = ({ picture, onOpenDatePicker }) => {
             <Button variant="secondary" onClick={onOpenDatePicker}>
               <FiCalendar />
             </Button>
-            <Button variant="secondary">
-              <FiDownload />
-            </Button>
+            {picture.media_type === "image" && (
+              <Button variant="secondary" onClick={downloadImage}>
+                <FiDownload />
+              </Button>
+            )}
           </div>
         </div>
       </motion.section>
