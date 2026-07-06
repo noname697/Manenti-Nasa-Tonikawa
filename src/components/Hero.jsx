@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useApp } from "../context/AppContext";
 import { APODCard } from "./APODCard";
 import DatePicker from "./DatePicker";
@@ -12,6 +13,7 @@ export const Hero = () => {
     setSelectedDate,
     randomPicture,
   } = useApp();
+  const datePickerRef = useRef(null);
 
   if (loading) {
     return (
@@ -34,12 +36,23 @@ export const Hero = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-end gap-4 px-8">
         <RandomButton onClick={randomPicture} />
         <DatePicker
+          ref={datePickerRef}
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
         />
       </div>
       <div className="mx-auto max-w-7xl px-8">
-        <APODCard key={picture.date} picture={picture} />
+        <APODCard
+          key={picture.date}
+          picture={picture}
+          onOpenDatePicker={() => {
+            if (datePickerRef.current?.showPicker) {
+              datePickerRef.current.showPicker();
+            } else {
+              datePickerRef.current.focus();
+            }
+          }}
+        />
       </div>
     </section>
   );

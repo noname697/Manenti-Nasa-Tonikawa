@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa";
 import InformationPanel from "./InformationPanel";
 import { motion } from "framer-motion";
 
-export const APODCard = ({ picture }) => {
+export const APODCard = ({ picture, onOpenDatePicker }) => {
   const { toggleFavorite, isFavorite } = useApp();
 
   const favorite = isFavorite(picture.date);
@@ -51,7 +51,7 @@ export const APODCard = ({ picture }) => {
 
               {favorite ? "Saved" : "Favorite"}
             </Button>
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={onOpenDatePicker}>
               <FiCalendar />
             </Button>
             <Button variant="secondary">
