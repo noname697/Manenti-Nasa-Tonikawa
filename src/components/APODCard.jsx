@@ -1,7 +1,13 @@
 import { FiCalendar, FiDownload, FiHeart } from "react-icons/fi";
 import Button from "./Button";
+import { useApp } from "../context/AppContext";
+import { FaHeart } from "react-icons/fa";
 
 export const APODCard = ({ picture }) => {
+  const { toggleFavorite, isFavorite } = useApp();
+
+  const favorite = isFavorite(picture.date);
+
   const isImage = picture.media_type === "image";
 
   return (
@@ -33,8 +39,10 @@ export const APODCard = ({ picture }) => {
           <p className="mt-3 text-muted">{picture.date}</p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button variant="primary">
-              <FiHeart />
+            <Button variant="primary" onClick={toggleFavorite}>
+              {favorite ? <FaHeart /> : <FiHeart />}
+
+              {favorite ? "Saved" : "Favorite"}
             </Button>
             <Button variant="secondary">
               <FiCalendar />
