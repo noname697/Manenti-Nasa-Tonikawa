@@ -39,7 +39,7 @@ export const Hero = () => {
         />
       </div>
       <div className="mx-auto max-w-7xl px-8">
-        <APODCard picture={picture} />
+        <APODCard key={picture.date} picture={picture} />
       </div>
     </section>
   );
