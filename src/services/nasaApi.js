@@ -19,3 +19,12 @@ export const getTodayPicture = () => {
 export const getPictureByDate = (date) => {
   return fetchApod(`&date=${date}`);
 };
+
+export const getRandomDate = () => {
+  const start = new Date("1995-06-16").getTime();
+  const end = new Date().getTime();
+
+  const randomTime = start + Math.random() * (end - start);
+
+  return new Date(randomTime).toISOString().split("T")[0];
+};
