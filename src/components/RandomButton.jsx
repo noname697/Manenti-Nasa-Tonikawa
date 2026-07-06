@@ -1,9 +1,9 @@
 import { FiShuffle } from "react-icons/fi";
 import Button from "./Button";
 
-const RandomButton = ({ onCLick }) => {
+const RandomButton = ({ onClick }) => {
   return (
-    <Button variant="secondary" onClick={onCLick}>
+    <Button variant="secondary" onClick={onClick}>
       <FiShuffle />
     </Button>
   );
