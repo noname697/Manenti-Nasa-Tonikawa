@@ -2,6 +2,8 @@ import { FiCalendar, FiDownload, FiHeart } from "react-icons/fi";
 import Button from "./Button";
 import { useApp } from "../context/AppContext";
 import { FaHeart } from "react-icons/fa";
+import InformationPanel from "./InformationPanel";
+import { motion } from "framer-motion";
 
 export const APODCard = ({ picture }) => {
   const { toggleFavorite, isFavorite } = useApp();
@@ -12,7 +14,12 @@ export const APODCard = ({ picture }) => {
 
   return (
     <>
-      <section className="relative h-[85vh] overflow-hidden rounded-[40px]">
+      <motion.section
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="relative h-[85vh] overflow-hidden rounded-[40px]"
+      >
         {isImage ? (
           <img
             src={picture.hdurl ?? picture.url}
@@ -52,13 +59,9 @@ export const APODCard = ({ picture }) => {
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="mx-auto mt-16 max-4xl">
-        <h2 className="mb-6 font-title text-4xl">About Today's Picture</h2>
-
-        <p className="leading-9 text-muted">{picture.explanation}</p>
-      </section>
+      <InformationPanel picture={picture} />
     </>
   );
 };
