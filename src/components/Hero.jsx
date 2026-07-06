@@ -1,7 +1,7 @@
+import { useApp } from "../context/AppContext";
 import { APODCard } from "./APODCard";
 import DatePicker from "./DatePicker";
 import RandomButton from "./RandomButton";
-import { useApp } from "../context/AppContext";
 
 export const Hero = () => {
   const {

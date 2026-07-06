@@ -17,6 +17,7 @@ export const AppProvider = ({ children }) => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
 
   useEffect(() => {
     const loadPicture = async () => {
@@ -79,6 +80,8 @@ export const AppProvider = ({ children }) => {
       favorites,
       toggleFavorite,
       isFavorite,
+      isFavoritesOpen,
+      setIsFavoritesOpen
     }),
     [picture, loading, error, selectedDate, favorites],
   );
