@@ -1,16 +1,154 @@
-# React + Vite
+# 🌙 Manenti NASA Tonikawa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautifully crafted NASA Astronomy Picture of the Day explorer inspired by the peaceful night skies of *Tonikaku Kawaii*. Discover the universe through NASA's APOD API with a modern, responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Preview
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Project Preview](./docs/preview.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 🚀 Live Demo
+
+### 👉 **link**
+
+
+---
+
+# ✨ Features
+
+- 🌌 View NASA's **Astronomy Picture of the Day**
+- 📅 Browse APOD images by selecting any available date
+- 🎲 "Surprise Me" button for a random astronomy picture
+- ❤️ Save favorite APODs using Local Storage
+- 📂 Favorite drawer with quick navigation
+- 📥 Download images in HD (when available)
+- 📱 Fully responsive design
+- 🌙 Custom interface inspired by *Tonikaku Kawaii*
+- ✨ Smooth animations using Framer Motion
+
+---
+
+# 🛠️ Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS v4
+- Framer Motion
+- React Icons
+- NASA APOD API
+
+---
+
+# ⚡ Quick Start
+
+Clone the repository:
+
+```bash
+git clone https://github.com/noname697/Manenti-Nasa-Tonikawa.git
+```
+
+Go to the project folder:
+
+```bash
+cd manenti-nasa-tonikawa
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create your `.env` file:
+
+```env
+VITE_NASA_API_KEY=YOUR_API_KEY
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+# 🌍 Environment Variables
+
+Create a `.env` file in the root directory.
+
+```env
+VITE_NASA_API_KEY=YOUR_API_KEY
+```
+
+You can get your free API key from:
+
+https://api.nasa.gov/
+
+---
+
+# 🧠 How It Works
+
+Instead of placing all logic inside React components, the application follows a modular architecture.
+
+- **Services** handle communication with NASA's API.
+- **Context API** manages global application state.
+- **Reusable components** keep the UI consistent.
+- **Local Storage** persists favorites between sessions.
+- **Framer Motion** provides smooth page transitions and animations.
+
+This separation makes the project easier to maintain and extend with new features.
+
+---
+
+# 📸 API
+
+This project uses the **NASA Astronomy Picture of the Day API (APOD)**.
+
+https://api.nasa.gov/
+
+---
+
+# 🎯 Challenge Requirements
+
+✅ HTML + CSS + JavaScript (React)
+
+✅ Public GitHub repository
+
+✅ Responsive custom UI
+
+✅ Fully deployed website
+
+✅ Uses an external API
+
+✅ Additional features beyond the tutorial
+
+- Favorites system
+- Random image generator
+- Date picker
+- HD image download
+- Animated interface
+
+---
+
+# 🙏 Acknowledgements
+
+- NASA for providing the APOD API
+- Hack Club for organizing the **Give Your Website a Pulse** challenge
+- The creators of *Tonikaku Kawaii* for inspiring the visual atmosphere of this project
+
+---
+
+# 🤖 AI Disclosure
+
+This project was designed and developed by me with assistance from AI for brainstorming, code review, documentation, and UI refinement. All architectural decisions, implementation, customization, and final code integration were completed by me.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
