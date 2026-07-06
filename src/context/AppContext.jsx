@@ -81,9 +81,9 @@ export const AppProvider = ({ children }) => {
       toggleFavorite,
       isFavorite,
       isFavoritesOpen,
-      setIsFavoritesOpen
+      setIsFavoritesOpen,
     }),
-    [picture, loading, error, selectedDate, favorites],
+    [picture, loading, error, selectedDate, favorites, isFavoritesOpen],
   );
 
   return <AppContext value={value}>{children}</AppContext>;
