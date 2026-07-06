@@ -1,8 +1,12 @@
-import { useApod } from "../hooks/useAPOD";
+import { useState } from "react";
+import { useApod } from "../hooks/useApod";
 import { APODCard } from "./APODCard";
+import DatePicker from "./DatePicker";
 
 export const Hero = () => {
-  const { picture, loading, error } = useApod();
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const { picture, loading, error } = useApod(selectedDate);
 
   if (loading) {
     return (
@@ -19,10 +23,20 @@ export const Hero = () => {
       </section>
     );
   }
+  const handler = (e) => {
+    console.log(e.target.value);
+    
+    setSelectedDate(e.target.value);
+  };
 
   return (
-    <section className="mx-auto max-w-7xl px-8 py-20">
-      <APODCard picture={picture} />
+    <section className="space-y-8">
+      <div className="mx-auto flex max-w-7xl justify-end px-8">
+        <DatePicker value={selectedDate} onChange={handler} />
+      </div>
+      <div className="max-auto max-w-7xl px-8">
+        <APODCard picture={picture} />
+      </div>
     </section>
   );
 };
