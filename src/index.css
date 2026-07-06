@@ -23,3 +23,41 @@ body {
 
     min-height: 100vh;
 }
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity  : .25;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity  : .9;
+        transform: scale(1.25)
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-25px)
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: .15;
+    }
+
+    50% {
+        opacity: .35;
+    }
+}
