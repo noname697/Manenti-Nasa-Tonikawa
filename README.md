@@ -1,151 +1,73 @@
 # 🌙 Manenti NASA Tonikawa
 
-A beautifully crafted NASA Astronomy Picture of the Day explorer inspired by the peaceful night skies of *Tonikaku Kawaii*. Discover the universe through NASA's APOD API with a modern, responsive interface.
-
----
-
-## 📸 Preview
-
+A modern web application inspired by the peaceful night skies of *Tonikaku Kawaii* that lets you explore NASA's Astronomy Picture of the Day (APOD).
 
 ![Project Preview](./docs/preview.png)
 
 ---
 
-# 🚀 Live Demo
-
-### 👉 **[Vercel Demo](https://manenti-nasa-tonikawa.vercel.app)**
-
+### **[Try Demo Here!](https://manenti-nasa-tonikawa.vercel.app)**
 
 ---
 
-# ✨ Features
+# Features
 
-- 🌌 View NASA's **Astronomy Picture of the Day**
-- 📅 Browse APOD images by selecting any available date
-- 🎲 "Surprise Me" button for a random astronomy picture
-- ❤️ Save favorite APODs using Local Storage
-- 📂 Favorite drawer with quick navigation
-- 📥 Download images in HD (when available)
-- 📱 Fully responsive design
-- 🌙 Custom interface inspired by *Tonikaku Kawaii*
-- ✨ Smooth animations using Framer Motion
+I wanted this to feel like a complete application with its own unique identity, not just a standard API tutorial project. Here is what you can do:
 
----
-
-# 🛠️ Tech Stack
-
-- React 19
-- Vite
-- Tailwind CSS v4
-- Framer Motion
-- React Icons
-- NASA APOD API
+* **Explore the Universe:** View NASA's daily astronomy pictures directly in the app.
+* **Time Travel:** Browse past pictures by selecting any available date.
+* **Surprise Me:** Hit the randomizer button to discover a completely unexpected astronomy picture.
+* **Personal Collection:** Save your favorite APODs locally and access them quickly through a custom sliding drawer.
+* **HD Downloads:** Download your favorite starry nights in High Definition (whenever available).
+* **Tonikawa UI/UX:** A custom, fully responsive interface inspired by the anime *Tonikaku Kawaii*, featuring smooth page transitions and animations powered by Framer Motion.
 
 ---
 
-# ⚡ Quick Start
+# How to Run it Locally
 
-Clone the repository:
+To get this project running on your machine, you'll need Node.js installed.
 
-```bash
-git clone https://github.com/noname697/Manenti-Nasa-Tonikawa.git
-```
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/noname697/Manenti-Nasa-Tonikawa.git](https://github.com/noname697/Manenti-Nasa-Tonikawa.git)
+   cd manenti-nasa-tonikawa
+   ```
 
-Go to the project folder:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-cd manenti-nasa-tonikawa
-```
+3. **Set up your environment variables:**
+   Create a `.env` file in the root directory and add your free NASA API key (get one at [api.nasa.gov](https://api.nasa.gov/)):
+   ```env
+   VITE_NASA_API_KEY=YOUR_API_KEY
+   ```
 
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create your `.env` file:
-
-```env
-VITE_NASA_API_KEY=YOUR_API_KEY
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-# 🌍 Environment Variables
+# How It Works
 
-Create a `.env` file in the root directory.
+The biggest challenge in building this project was keeping the application organized as it grew. I am really proud of transforming a simple API fetcher into a highly modular app.
 
-```env
-VITE_NASA_API_KEY=YOUR_API_KEY
-```
+Instead of dumping all the logic inside React components, I focused on a clean architecture. I separated the APOD API data fetching into custom **Services** and implemented the **Context API** for global state management.
 
-You can get your free API key from:
-
-https://api.nasa.gov/
+Another interesting hurdle was handling the different media types NASA returns. The app dynamically adapts the UI depending on whether the APOD of the day is a standard image or an embedded video iframe, wrapping everything in smooth **Framer Motion** transitions to keep the peaceful aesthetic intact.
 
 ---
 
-# 🧠 How It Works
+# Acknowledgements & Credits
 
-Instead of placing all logic inside React components, the application follows a modular architecture.
+* **NASA** for providing the incredible [APOD API](https://api.nasa.gov/).
+* **Hack Club** for organizing the *Give Your Website a Pulse* challenge and pushing me to build this.
+* **Kenjiro Hata** and the creators of *Tonikaku Kawaii* for inspiring the visual atmosphere, night skies, and peaceful vibe of this project.
 
-- **Services** handle communication with NASA's API.
-- **Context API** manages global application state.
-- **Reusable components** keep the UI consistent.
-- **Local Storage** persists favorites between sessions.
-- **Framer Motion** provides smooth page transitions and animations.
-
-This separation makes the project easier to maintain and extend with new features.
-
----
-
-# 📸 API
-
-This project uses the **NASA Astronomy Picture of the Day API (APOD)**.
-
-https://api.nasa.gov/
-
----
-
-# 🎯 Challenge Requirements
-
-✅ HTML + CSS + JavaScript (React)
-
-✅ Public GitHub repository
-
-✅ Responsive custom UI
-
-✅ Fully deployed website
-
-✅ Uses an external API
-
-✅ Additional features beyond the tutorial
-
-- Favorites system
-- Random image generator
-- Date picker
-- HD image download
-- Animated interface
-
----
-
-# 🙏 Acknowledgements
-
-- NASA for providing the APOD API
-- Hack Club for organizing the **Give Your Website a Pulse** challenge
-- The creators of *Tonikaku Kawaii* for inspiring the visual atmosphere of this project
-
----
-
-# 🤖 AI Disclosure
-
-This project was designed and developed by me with assistance from AI for brainstorming, code review, documentation, and UI refinement. All architectural decisions, implementation, customization, and final code integration were completed by me.
+*(Note: This project was designed and developed entirely by me. I used AI as a sounding board for brainstorming, code review, and polishing this documentation, but all architectural decisions, custom styling, and final code integration are my own).*
 
 ---
 
